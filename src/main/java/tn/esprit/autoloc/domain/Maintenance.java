@@ -25,4 +25,8 @@ public class Maintenance {
     private LocalDate dateFin;
 
     private String description;
+
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "id_vehicule")
+    private Vehicule vehicule;
 }
