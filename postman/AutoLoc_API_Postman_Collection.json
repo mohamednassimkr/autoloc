@@ -1,0 +1,1061 @@
+{
+  "info": {
+    "_postman_id": "autoloc-api-collection-2026",
+    "name": "AutoLoc API - Collection CRUD Complete",
+    "description": "Collection Postman pour l'etude de cas AutoLoc (Ateliers Spring Boot). Couvre l'ensemble des operations CRUD (POST, GET, PUT, DELETE) pour les 9 entites de la couche Presentation.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8081",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Module Agence",
+      "item": [
+        {
+          "name": "1. Creer un(e) Agence (POST)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nom\": \"Agence Tunis Centre\",\n  \"ville\": \"Tunis\",\n  \"adresse\": \"15 Avenue Habib Bourguiba\",\n  \"telephone\": \"+216 71 123 456\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/agences",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "agences"
+              ]
+            },
+            "description": "Creation d'une nouvelle ressource Agence via POST."
+          }
+        },
+        {
+          "name": "2. Obtenir tous les agences (GET)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/agences",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "agences"
+              ]
+            },
+            "description": "Recuperation de la liste complete des agences."
+          }
+        },
+        {
+          "name": "3. Obtenir un(e) Agence par ID (GET)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/agences/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "agences",
+                "1"
+              ]
+            },
+            "description": "Recuperation d'un(e) Agence specifique par identifiant."
+          }
+        },
+        {
+          "name": "4. Mettre a jour un(e) Agence (PUT)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nom\": \"Agence Tunis Centre Prestige\",\n  \"ville\": \"Tunis\",\n  \"adresse\": \"15 Avenue Habib Bourguiba\",\n  \"telephone\": \"+216 71 999 888\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/agences/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "agences",
+                "1"
+              ]
+            },
+            "description": "Mise a jour complete d'un(e) Agence existant(e)."
+          }
+        },
+        {
+          "name": "5. Supprimer un(e) Agence (DELETE)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/agences/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "agences",
+                "1"
+              ]
+            },
+            "description": "Suppression de la ressource Agence par identifiant."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Module Client",
+      "item": [
+        {
+          "name": "1. Creer un(e) Client (POST)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nom\": \"Ben Salem\",\n  \"prenom\": \"Yassine\",\n  \"email\": \"yassine.bensalem@gmail.com\",\n  \"telephone\": \"+216 98 765 432\",\n  \"numPermis\": \"TU-88990011\",\n  \"dateInscription\": \"2026-01-15\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/clients",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "clients"
+              ]
+            },
+            "description": "Creation d'une nouvelle ressource Client via POST."
+          }
+        },
+        {
+          "name": "2. Obtenir tous les clients (GET)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/clients",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "clients"
+              ]
+            },
+            "description": "Recuperation de la liste complete des clients."
+          }
+        },
+        {
+          "name": "3. Obtenir un(e) Client par ID (GET)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/clients/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "clients",
+                "1"
+              ]
+            },
+            "description": "Recuperation d'un(e) Client specifique par identifiant."
+          }
+        },
+        {
+          "name": "4. Mettre a jour un(e) Client (PUT)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nom\": \"Ben Salem\",\n  \"prenom\": \"Yassine\",\n  \"email\": \"yassine.bensalem@esprit.tn\",\n  \"telephone\": \"+216 98 765 999\",\n  \"numPermis\": \"TU-88990011\",\n  \"dateInscription\": \"2026-01-15\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/clients/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "clients",
+                "1"
+              ]
+            },
+            "description": "Mise a jour complete d'un(e) Client existant(e)."
+          }
+        },
+        {
+          "name": "5. Supprimer un(e) Client (DELETE)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/clients/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "clients",
+                "1"
+              ]
+            },
+            "description": "Suppression de la ressource Client par identifiant."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Module Vehicule",
+      "item": [
+        {
+          "name": "1. Creer un(e) Vehicule (POST)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"immatriculation\": \"245-TUN-1234\",\n  \"marque\": \"Volkswagen\",\n  \"modele\": \"Golf 8\",\n  \"categorie\": \"BERLINE\",\n  \"tarifJournalier\": 140.0,\n  \"statut\": \"DISPONIBLE\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/vehicules",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "vehicules"
+              ]
+            },
+            "description": "Creation d'une nouvelle ressource Vehicule via POST."
+          }
+        },
+        {
+          "name": "2. Obtenir tous les vehicules (GET)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/vehicules",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "vehicules"
+              ]
+            },
+            "description": "Recuperation de la liste complete des vehicules."
+          }
+        },
+        {
+          "name": "3. Obtenir un(e) Vehicule par ID (GET)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/vehicules/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "vehicules",
+                "1"
+              ]
+            },
+            "description": "Recuperation d'un(e) Vehicule specifique par identifiant."
+          }
+        },
+        {
+          "name": "4. Mettre a jour un(e) Vehicule (PUT)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"immatriculation\": \"245-TUN-1234\",\n  \"marque\": \"Volkswagen\",\n  \"modele\": \"Golf 8\",\n  \"categorie\": \"BERLINE\",\n  \"tarifJournalier\": 155.0,\n  \"statut\": \"LOUE\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/vehicules/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "vehicules",
+                "1"
+              ]
+            },
+            "description": "Mise a jour complete d'un(e) Vehicule existant(e)."
+          }
+        },
+        {
+          "name": "5. Supprimer un(e) Vehicule (DELETE)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/vehicules/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "vehicules",
+                "1"
+              ]
+            },
+            "description": "Suppression de la ressource Vehicule par identifiant."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Module Equipement",
+      "item": [
+        {
+          "name": "1. Creer un(e) Equipement (POST)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"libelle\": \"Siege Bebe Isofix\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/equipements",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "equipements"
+              ]
+            },
+            "description": "Creation d'une nouvelle ressource Equipement via POST."
+          }
+        },
+        {
+          "name": "2. Obtenir tous les equipements (GET)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/equipements",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "equipements"
+              ]
+            },
+            "description": "Recuperation de la liste complete des equipements."
+          }
+        },
+        {
+          "name": "3. Obtenir un(e) Equipement par ID (GET)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/equipements/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "equipements",
+                "1"
+              ]
+            },
+            "description": "Recuperation d'un(e) Equipement specifique par identifiant."
+          }
+        },
+        {
+          "name": "4. Mettre a jour un(e) Equipement (PUT)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"libelle\": \"Siege Bebe Isofix Haut de Gamme\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/equipements/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "equipements",
+                "1"
+              ]
+            },
+            "description": "Mise a jour complete d'un(e) Equipement existant(e)."
+          }
+        },
+        {
+          "name": "5. Supprimer un(e) Equipement (DELETE)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/equipements/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "equipements",
+                "1"
+              ]
+            },
+            "description": "Suppression de la ressource Equipement par identifiant."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Module Employe",
+      "item": [
+        {
+          "name": "1. Creer un(e) Employe (POST)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nom\": \"Mansour\",\n  \"prenom\": \"Karim\",\n  \"role\": \"MANAGER\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/employes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "employes"
+              ]
+            },
+            "description": "Creation d'une nouvelle ressource Employe via POST."
+          }
+        },
+        {
+          "name": "2. Obtenir tous les employes (GET)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/employes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "employes"
+              ]
+            },
+            "description": "Recuperation de la liste complete des employes."
+          }
+        },
+        {
+          "name": "3. Obtenir un(e) Employe par ID (GET)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/employes/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "employes",
+                "1"
+              ]
+            },
+            "description": "Recuperation d'un(e) Employe specifique par identifiant."
+          }
+        },
+        {
+          "name": "4. Mettre a jour un(e) Employe (PUT)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nom\": \"Mansour\",\n  \"prenom\": \"Karim\",\n  \"role\": \"AGENT\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/employes/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "employes",
+                "1"
+              ]
+            },
+            "description": "Mise a jour complete d'un(e) Employe existant(e)."
+          }
+        },
+        {
+          "name": "5. Supprimer un(e) Employe (DELETE)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/employes/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "employes",
+                "1"
+              ]
+            },
+            "description": "Suppression de la ressource Employe par identifiant."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Module Contrat",
+      "item": [
+        {
+          "name": "1. Creer un(e) Contrat (POST)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"dateSignature\": \"2026-10-23\",\n  \"montantTotal\": 700.0,\n  \"valide\": true\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/contrats",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "contrats"
+              ]
+            },
+            "description": "Creation d'une nouvelle ressource Contrat via POST."
+          }
+        },
+        {
+          "name": "2. Obtenir tous les contrats (GET)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/contrats",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "contrats"
+              ]
+            },
+            "description": "Recuperation de la liste complete des contrats."
+          }
+        },
+        {
+          "name": "3. Obtenir un(e) Contrat par ID (GET)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/contrats/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "contrats",
+                "1"
+              ]
+            },
+            "description": "Recuperation d'un(e) Contrat specifique par identifiant."
+          }
+        },
+        {
+          "name": "4. Mettre a jour un(e) Contrat (PUT)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"dateSignature\": \"2026-10-23\",\n  \"montantTotal\": 750.0,\n  \"valide\": true\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/contrats/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "contrats",
+                "1"
+              ]
+            },
+            "description": "Mise a jour complete d'un(e) Contrat existant(e)."
+          }
+        },
+        {
+          "name": "5. Supprimer un(e) Contrat (DELETE)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/contrats/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "contrats",
+                "1"
+              ]
+            },
+            "description": "Suppression de la ressource Contrat par identifiant."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Module Paiement",
+      "item": [
+        {
+          "name": "1. Creer un(e) Paiement (POST)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"montant\": 350.0,\n  \"datePaiement\": \"2026-10-23\",\n  \"modePaiement\": \"CARTE\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/paiements",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "paiements"
+              ]
+            },
+            "description": "Creation d'une nouvelle ressource Paiement via POST."
+          }
+        },
+        {
+          "name": "2. Obtenir tous les paiements (GET)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/paiements",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "paiements"
+              ]
+            },
+            "description": "Recuperation de la liste complete des paiements."
+          }
+        },
+        {
+          "name": "3. Obtenir un(e) Paiement par ID (GET)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/paiements/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "paiements",
+                "1"
+              ]
+            },
+            "description": "Recuperation d'un(e) Paiement specifique par identifiant."
+          }
+        },
+        {
+          "name": "4. Mettre a jour un(e) Paiement (PUT)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"montant\": 400.0,\n  \"datePaiement\": \"2026-10-23\",\n  \"modePaiement\": \"VIREMENT\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/paiements/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "paiements",
+                "1"
+              ]
+            },
+            "description": "Mise a jour complete d'un(e) Paiement existant(e)."
+          }
+        },
+        {
+          "name": "5. Supprimer un(e) Paiement (DELETE)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/paiements/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "paiements",
+                "1"
+              ]
+            },
+            "description": "Suppression de la ressource Paiement par identifiant."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Module Maintenance",
+      "item": [
+        {
+          "name": "1. Creer un(e) Maintenance (POST)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"dateDebut\": \"2026-11-01\",\n  \"dateFin\": \"2026-11-03\",\n  \"description\": \"Controle technique periodique et vidange moteur\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/maintenances",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "maintenances"
+              ]
+            },
+            "description": "Creation d'une nouvelle ressource Maintenance via POST."
+          }
+        },
+        {
+          "name": "2. Obtenir tous les maintenances (GET)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/maintenances",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "maintenances"
+              ]
+            },
+            "description": "Recuperation de la liste complete des maintenances."
+          }
+        },
+        {
+          "name": "3. Obtenir un(e) Maintenance par ID (GET)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/maintenances/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "maintenances",
+                "1"
+              ]
+            },
+            "description": "Recuperation d'un(e) Maintenance specifique par identifiant."
+          }
+        },
+        {
+          "name": "4. Mettre a jour un(e) Maintenance (PUT)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"dateDebut\": \"2026-11-01\",\n  \"dateFin\": \"2026-11-04\",\n  \"description\": \"Controle technique, vidange et changement des freins\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/maintenances/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "maintenances",
+                "1"
+              ]
+            },
+            "description": "Mise a jour complete d'un(e) Maintenance existant(e)."
+          }
+        },
+        {
+          "name": "5. Supprimer un(e) Maintenance (DELETE)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/maintenances/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "maintenances",
+                "1"
+              ]
+            },
+            "description": "Suppression de la ressource Maintenance par identifiant."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Module Reservation",
+      "item": [
+        {
+          "name": "1. Creer un(e) Reservation (POST)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"dateDebut\": \"2026-11-05\",\n  \"dateFin\": \"2026-11-10\",\n  \"statut\": \"CONFIRMEE\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/reservations",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "reservations"
+              ]
+            },
+            "description": "Creation d'une nouvelle ressource Reservation via POST."
+          }
+        },
+        {
+          "name": "2. Obtenir tous les reservations (GET)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/reservations",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "reservations"
+              ]
+            },
+            "description": "Recuperation de la liste complete des reservations."
+          }
+        },
+        {
+          "name": "3. Obtenir un(e) Reservation par ID (GET)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/reservations/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "reservations",
+                "1"
+              ]
+            },
+            "description": "Recuperation d'un(e) Reservation specifique par identifiant."
+          }
+        },
+        {
+          "name": "4. Mettre a jour un(e) Reservation (PUT)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"dateDebut\": \"2026-11-05\",\n  \"dateFin\": \"2026-11-12\",\n  \"statut\": \"CONFIRMEE\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/reservations/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "reservations",
+                "1"
+              ]
+            },
+            "description": "Mise a jour complete d'un(e) Reservation existant(e)."
+          }
+        },
+        {
+          "name": "5. Supprimer un(e) Reservation (DELETE)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/reservations/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "reservations",
+                "1"
+              ]
+            },
+            "description": "Suppression de la ressource Reservation par identifiant."
+          }
+        }
+      ]
+    }
+  ]
+}
